@@ -16,4 +16,4 @@ install:
 
 #script: python tests/test.py default
 script: nosetests tests/test.py default
-cache: true
+#cache: true
