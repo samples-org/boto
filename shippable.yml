@@ -6,14 +6,20 @@ language: python
 
 python:
  - 2.7
-
+before_install:
+  # We're going to set up a virtualenv and activate the python version we want to use
+  - mkdir -p $HOME/sample_ve/
+  - virtualenv -p /usr/bin/python$PYTHON_VERSION $HOME/sample_ve/
+  - source $HOME/sample_ve/bin/activate
 build_image: shippableimages/ubuntu1404_python
 
+#build_image: shippableimages/ubuntu1404_python
+
 script: 
- - PATH=$WORKSPACE/ve/bin:/usr/local/bin:$PATH
- - virtualenv ve
- - . ve/bin/activate
- - sudo apt-get install -y python-dev
+# - PATH=$WORKSPACE/ve/bin:/usr/local/bin:$PATH
+ #- virtualenv ve
+ #- . ve/bin/activate
+ #- sudo apt-get install -y python-dev
  - sudo apt-get update
  - sudo apt-get --reinstall install -qq language-pack-en language-pack-de
  - sudo apt-get install swig
