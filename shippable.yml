@@ -22,7 +22,7 @@ script:
  #- sudo apt-get install -y python-dev
  - sudo apt-get update
  - sudo apt-get --reinstall install -qq language-pack-en language-pack-de
- - sudo apt-get install swig
+ - apt-get install swig
  - pip install -r requirements-py26.txt
  - pip install -r requirements.txt
  - mkdir -p shippable/testresults shippable/codecoverage
